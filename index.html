@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live HRV Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="device-selection">
+            <button id="btn-search"> Search Devices</button>
+            <progress id="search-progress" value="0" max="100"> 0% </progress>
+        </br>
+            <select id="device-select" disabled>
+                <option value="">-- Select a Device --</option>
+            </select>
+            <button id="btn-connect" disabled>Connect</button>
+            <button id="btn-disconnect" disabled>Disconnect</button>
+
+        </div>
+        <div class="controls">
+            <h3>Recording Controls</h3>
+            <button id="btn-start" disabled>Start Recording</button>
+            <button id="btn-pause-resume" disabled>Pause Recording</button>
+            <button id="btn-end" disabled>End Recording</button>
+        </div>
+
+        <h3>Live HRV<span style="font-size: 1ch;">(rmssd)</span> <span id="live-rmssd-value"> -- </span> </h3> 
+        
+        <div id="rmssd-scroll-container" class="chart-container"><div id="rmssd-chart-container" class="chart-area-container">
+            <canvas id="rmssd-chart" class="chart"></canvas>
+        </div></div>
+
+        <button id="btn-export"> Export </button>
+
+
+    </div>
+
+
+    <script src="static/main.js"></script>
+    <script src="static/view.js"></script>
+    <script src="static/chart.js"></script>
+    <script src="static/btnControl.js"></script>
+
+</body>
+</html>
